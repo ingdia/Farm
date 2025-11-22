@@ -41,7 +41,7 @@ const EquipementDash = () => {
   };
 
   return (
-    <div className="min-h-screen font-sanserif bg-gray-50 pt-50 ">
+    <div className="min-h-screen font-sans bg-gray-50 pt-12 ">
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-6">
         <div className="flex justify-between items-center mt-8">
           <h1 className="text-3xl font-bold text-gray-800">Equipment Dashboard</h1>

@@ -68,7 +68,7 @@ const EquipmentCard = ({ equipment, user, onBookClick, onEditClick, onDeleteClic
         </div>
 
         <div className="flex gap-2 mt-3">
-          {!isOwner && (
+          {user && !isOwner && (
             <button
               onClick={() => onBookClick(equipment)}
               className="flex-1 py-2 rounded-lg font-medium text-sm bg-green-600 text-white hover:bg-green-700"
