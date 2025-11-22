@@ -14,7 +14,8 @@ export const dummyEquipment = [
         "images": [
             "https://via.placeholder.com/150",
             "https://via.placeholder.com/150"
-        ]
+        ],
+        "availableDates": ["2024-08-10", "2024-08-11", "2024-08-15"]
     },
     {
         "id": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
@@ -31,7 +32,8 @@ export const dummyEquipment = [
         "images": [
           "https://via.placeholder.com/150",
           "https://via.placeholder.com/150"
-        ]
+        ],
+        "availableDates": []
     },
     {
         "id": "f3g4h5i6-j7k8-l9m0-n1o2-p3q4r5s6t7u8",
@@ -48,6 +50,7 @@ export const dummyEquipment = [
         "images": [
           "https://via.placeholder.com/150",
           "https://via.placeholder.com/150"
-        ]
+        ],
+        "availableDates": ["2024-08-12", "2024-08-13", "2024-08-14"]
     }
 ];

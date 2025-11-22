@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartProvider from './website/context/CartProvider';
+import { AuthProvider } from "./website/context/auth/AuthProvider";
 
 // Public pages
 import WebsiteLayout from "./website/Layout";
@@ -16,37 +17,41 @@ import SignInUp from "./website/pages/SignInUp";
 import DashboardLayout from "./UserDashboard/DashLayout";
 import Overview from "./UserDashboard/Overview";
 import MarketplaceDash from "./UserDashboard/MarketDash/MarketplaceDash";
-import PestDiagnosisDash from "./UserDashboard/Diagnosis/pestDash"
+import PestDiagnosisDash from "./UserDashboard/Diagnosis/pestDash";
+import EquipementDash from "./UserDashboard/Equipement/EquipementDash";
 
 function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <Routes>
+      <AuthProvider>
+        <CartProvider>
+          <Routes>
 
-          {/* PUBLIC WEBSITE ROUTES */}
-          <Route element={<WebsiteLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/equipement" element={<Equipment />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/pest-diagnosis" element={<PestDiagnosis />} />
-            <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/signinup" element={<SignInUp />} />
-          </Route>
+            {/* PUBLIC WEBSITE ROUTES */}
+            <Route element={<WebsiteLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/equipement" element={<Equipment />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/marketplace" element={<Marketplace />} />
+              <Route path="/pest-diagnosis" element={<PestDiagnosis />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/signinup" element={<SignInUp />} />
+            </Route>
 
-          {/* DASHBOARD ROUTES */}
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<Overview />} />
-            <Route path="/dashboard/marketplace" element={<MarketplaceDash />} />
-             <Route path="/dashboard/diagnosis" element={<PestDiagnosisDash />} />
-             {/* <Route path="/product/:id" element={<ProductPage />} /> */}
+            {/* DASHBOARD ROUTES */}
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<Overview />} />
+              <Route path="/dashboard/marketplace" element={<MarketplaceDash />} />
+              <Route path="/dashboard/diagnosis" element={<PestDiagnosisDash />} />
+              <Route path="/dashboard/equipment" element={<EquipementDash />} />
+              {/* <Route path="/product/:id" element={<ProductPage />} /> */}
 
-            {/* you can add more dashboard pages here */}
-          </Route>
+              {/* you can add more dashboard pages here */}
+            </Route>
 
-        </Routes>
-      </CartProvider>
+          </Routes>
+        </CartProvider>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
